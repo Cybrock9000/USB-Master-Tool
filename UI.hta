@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cybrocks Master Panel</title>
+    <HTA:APPLICATION
+        APPLICATIONNAME="Cybrocks Master Panel"
+        BORDER="thin"
+        BORDERSTYLE="normal"
+        CAPTION="yes"
+        SHOWINTASKBAR="yes"
+        SINGLEINSTANCE="yes"
+        WINDOWSTATE="normal"
+        SYSMENU="yes"
+        SCROLL="no">
+    </HTA:APPLICATION>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Custom background color */
+            color: #1703fc;           /* Custom text color */
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #1703fc; /* Custom header color */
+        }
+        p {
+            color: #1703fc; /* Custom paragraph text color */
+        }
+        button {
+            background-color: #000000; /* Button background color */
+            color: #ffffff;           /* Button text color */
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9; /* Button hover color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Cybrocks Master Panel</h1>
+    <p>Several Hacking Tools Made By Me ;).</p>
+    
+    <!-- Buttons -->
+    <button onclick="runSaveIPScript()">Save IP and Hostname</button>
+    <button onclick="runCustomScript()">Run Virus</button>
+    <button onclick="runCustomScript()">Crash PC</button>
+
+    <script language="VBScript">
+    ' Function to run the SaveIPAndHostname.vbs script
+    Sub runSaveIPScript()
+        Dim objShell
+        Set objShell = CreateObject("WScript.Shell")
+        objShell.Run "wscript.exe ip.vbs", 1, True
+        MsgBox "The Save IP script has been executed. Check IP_Hostname.txt for results.", vbInformation, "Task Complete"
+        Set objShell = Nothing
+    End Sub
+
+    ' Function to run a custom script
+    Sub runCustomScript()
+        Dim objShell
+        Set objShell = CreateObject("WScript.Shell")
+        objShell.Run "wscript.exe EthansVirus.vbs", 1, True
+        MsgBox "The Virus has been executed.", vbInformation, "Task Complete"
+        Set objShell = Nothing
+    End Sub
+    </script>
+</body>
+</html>
